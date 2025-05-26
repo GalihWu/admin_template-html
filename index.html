@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/style.css" />
+    <title>Template Dashboard Admin</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="/img/logo.jpg" alt="Logo" />
+            <h2>Logo</h2>
+          </div>
+
+          <div class="close" id="close-btn">
+            <span class="material-icons-round"> close </span>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <a href="#" class="active">
+            <span class="material-icons-round"> dashboard </span>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-round"> person </span>
+            <h3>Customers</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-round"> format_list_bulleted </span>
+            <h3>Orders</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-round"> query_stats </span>
+            <h3>Analytics</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-round"> mark_as_unread </span>
+            <h3>Messages</h3>
+            <span class="message-count">26</span>
+          </a>
+          <a href="#">
+            <span class="material-icons-round"> local_offer </span>
+            <h3>Products</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-round"> assignment </span>
+            <h3>Reports</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-round"> build </span>
+            <h3>Settings</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-round"> add </span>
+            <h3>Add Product</h3>
+          </a>
+          <a href="#">
+            <span class="material-icons-round"> logout </span>
+            <h3>Logout</h3>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main>
+        <h1>Dashboard</h1>
+        <div class="date">
+          <label for="date-input">Select date:</label>
+          <input
+            type="date"
+            id="date-input"
+            name="date"
+            title="Select a date"
+            placeholder="YYYY-MM-DD"
+          />
+        </div>
+      </main>
+
+      <!-- Right -->
+      <div class="right">
+        <!-- Top -->
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons-round">menu</span>
+          </button>
+          <div class="theme-toggler">
+            <span class="material-icons-round active">light_mode</span>
+            <span class="material-icons-round">dark_mode</span>
+          </div>
+          <div class="profile">
+            <div class="info">
+              <p>Hi, <b>Thomas</b></p>
+              <small class="text-muted">Admin</small>
+            </div>
+            <div class="profile-photo">
+              <img src="./img/profile.jpg" alt="profile" />
+            </div>
+          </div>
+        </div>
+        <!-- Sales Analytics -->
+      </div>
+    </div>
+
+    <script src="./order.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
