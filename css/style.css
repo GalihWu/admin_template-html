@@ -62,9 +62,10 @@ body {
 
 .container {
   display: grid;
+  position: relative;
   width: 96%;
   margin: 0 auto;
-  grid-template-columns: 14rem auto 23rem;
+  grid-template-columns: 14rem max-content;
   gap: 1.8rem;
 }
 
@@ -234,7 +235,7 @@ aside .sidebar .message-count {
 
 /* Main */
 main {
-  margin-top: 1.4rem;
+  margin-top: 6.4rem;
 }
 
 main .date {
@@ -250,22 +251,22 @@ main .date input[type='date'] {
   color: var(--color-dark);
 }
 
-/* Right */
-.right {
-  margin-top: 1.4rem;
-}
-
-.right .top {
+/* Header */
+.header {
   display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 1.4rem;
   justify-content: end;
   gap: 2rem;
 }
 
-.right .top button {
+.header button {
   display: none;
 }
 
-.right .theme-toggler {
+.theme-toggler {
   background: var(--color-light);
   display: flex;
   justify-content: space-between;
@@ -276,7 +277,7 @@ main .date input[type='date'] {
   border-radius: var(--border-radius-1);
 }
 
-.right .theme-toggler span {
+.theme-toggler span {
   font-size: 1.2rem;
   width: 50%;
   height: 100%;
@@ -285,13 +286,64 @@ main .date input[type='date'] {
   justify-content: center;
 }
 
-.right .theme-toggler span.active {
+.theme-toggler span.active {
   background: var(--color-primary);
   color: var(--color-white);
   border-radius: var(--border-radius-1);
 }
 
-.right .top .profile {
+.header .settings {
+  position: relative;
+}
+
+.header .settings .settings-icon {
+  background: var(--color-light);
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header .settings .settings-icon:hover {
+  background: var(--color-dark-variant);
+  color: var(--color-white);
+}
+
+.header .settings .settings-menu {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  background: var(--color-white);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius-2);
+  width: 12rem;
+  padding: 1rem 1.4rem;
+  z-index: 2;
+  display: none;
+}
+
+.header .settings .settings-menu.show {
+  display: block;
+}
+
+.header .settings .settings-menu a {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.9rem;
+  padding: var(--padding-1) 0;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.header .settings .settings-menu a:hover {
+  color: var(--color-primary);
+}
+
+.header .profile {
   display: flex;
   gap: 2rem;
   text-align: right;
@@ -384,12 +436,7 @@ main .date input[type='date'] {
       padding: 0 1rem;
     }
 
-    .right {
-      width: 94%;
-      margin: 0 auto 4rem;
-    }
-
-    .right .top {
+    .header {
       position: fixed;
       top: 0;
       left: 0;
@@ -403,17 +450,15 @@ main .date input[type='date'] {
       box-shadow: 0 1rem 1rem var(--color-light);
     }
 
-    .right .top .theme-toggler {
+    .header .theme-toggler {
       width: 4.4rem;
-      position: absolute;
-      left: 66%;
     }
 
-    .right .profile .info {
+    .profile .info {
       display: none;
     }
 
-    .right .top button {
+    .header button {
       display: inline-block;
       background: transparent;
       cursor: pointer;
@@ -422,7 +467,7 @@ main .date input[type='date'] {
       left: 1rem;
     }
 
-    .right .top button span {
+    .header button span {
       font-size: 2rem;
     }
   }

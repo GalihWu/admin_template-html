@@ -3,6 +3,7 @@ const menuBtn = document.querySelector('#menu-btn');
 const closeBtn = document.querySelector('#close-btn');
 const themeToggleBtn = document.querySelector('.theme-toggler');
 const menuItems = document.querySelectorAll('.sidebar a');
+const settingBtn = document.querySelector('#setting-btn');
 
 // show sidebar
 menuBtn.addEventListener('click', () => {
@@ -30,16 +31,16 @@ menuItems.forEach((item) => {
   });
 });
 
-// add order list
-Orders.forEach((order) => {
-  const tr = document.createElement('tr');
-  const trContent = `
-      <td>${order.productName}</td>
-      <td>${order.productNumber}</td>
-      <td>${order.paymentStatus}</td>
-      <td>${order.shipping}</td>
-      <td class="primary">Details</td>
-    `;
-  tr.innerHTML = trContent;
-  document.querySelector('table tbody#order-list').appendChild(tr);
+// settings button
+settingBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const menu = settingBtn.querySelector('.settings-menu');
+  menu.classList.toggle('show');
+});
+
+document.addEventListener('click', (e) => {
+  if (!settingBtn.contains(e.target)) {
+    const menu = settingBtn.querySelector('.settings-menu');
+    menu.classList.remove('show');
+  }
 });
